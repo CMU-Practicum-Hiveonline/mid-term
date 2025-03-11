@@ -1,180 +1,119 @@
+# 10-Minute Speaking Notes for Updated Hiveonline Presentation
 
-# Speaking Notes - System Orchestration for User Engagement Presentation
+## Hussein (Slides 1-2) - 2 minutes
 
-## Slide 1: Title Page (30 seconds)
-**Speaker: Wallace**
+### Slide 1: Title Slide
+Good morning everyone. My name is Hussein Murashi, and along with my teammates – Wallace, Simon, David, and Emma – we're presenting our System Orchestration for User Engagement project for Hiveonline. Today, we'll share our progress with our client representative, Qusai Alfaki, and our faculty advisor, Professor Ostheimer. Thank you for joining us.
 
-Good morning everyone. My name is Wallace, and along with my team members – Simon, Hussein, David, and Emma – we're working on the System Orchestration for User Engagement project for Hiveonline. 
+### Slide 2: Agenda
+Here's what we'll cover today. We'll start with an introduction to the problem we're addressing, followed by our project goals and proposed solution. We'll then discuss key requirements, share our current progress, outline challenges we've faced and our approach to overcome them, and finally present our next steps. 
 
-Today, we're excited to share our progress with you, particularly our client representative, Qusai Alfaki, and our faculty advisor, Professor Ostheimer. Thank you for joining us.
+I'll now hand over to Emma, who will introduce Hiveonline and describe the problem we're addressing.
 
-## Slide 2: Agenda (20 seconds)
-**Speaker: Wallace**
+## Emma (Slides 3-4) - 2 minutes
 
-Here's what we'll cover today. We'll start with the problem we're addressing and our project goals, followed by our proposed solution and current progress. We'll then dive into the technical architecture, implementation approach, challenges we've faced, and our timeline for the remainder of the project.
+### Slide 3: Introduction and Problem Description
+Thank you, Hussein. 
 
-I'll now hand over to Hussein to describe the problem we're addressing.
+Hiveonline is a digital financial platform that uses blockchain technology to connect African smallholder farmers with markets, resources, and opportunities across multiple countries. They currently serve over 65,000 farmers in Ghana, Kenya, and Mozambique.
 
-## Slide 3: Problem Description (60 seconds)
-**Speaker: Hussein**
+The core problem Hiveonline faces is declining user retention due to insufficient personalized communication. With users speaking different languages across multiple countries, generic notifications fail to drive meaningful engagement. There's no automated system to send relevant, timely prompts to users based on their activity or financial situation.
 
-Thank you, Wallace. 
+A key example is when a farmer receives payment for their harvest but doesn't receive a smart reminder to repay their loan—a missed opportunity for both the farmer and Hiveonline.
 
-The core problem Hiveonline faces is declining user retention due to insufficient communication. Users interact with the MyCoop and VSLA platforms but don't receive enough timely reminders or personalized notifications to keep them engaged.
+### Slide 4: Project Goals
+To address these challenges, we've defined five key goals:
 
-Currently, communications are primarily manual, which doesn't scale effectively for Hiveonline's 65,000+ farmers across Ghana, Kenya, and Mozambique. Each country requires tailored engagement strategies due to language differences and local contexts.
-
-Perhaps most critically, the system is missing opportunities to prompt beneficial financial actions—for example, reminding farmers to repay loans after receiving payment for their harvest.
-
-These challenges impact both user retention and financial outcomes for Hiveonline and its users. Emma will now take us through our project goals.
-
-## Slide 4: Project Goals (60 seconds)
-**Speaker: Emma**
-
-Thanks, Hussein.
-
-Our project has five key goals to address these challenges:
-
-First, we aim to automate communication by implementing rule-based triggers that will initiate timely, relevant notifications to users.
+First, we aim to automate communication using rule-based triggers that initiate timely, personalized notifications.
 
 Second, we're targeting a 30% increase in platform usage through these relevant communications.
 
-Third, we're building multi-channel delivery capabilities to support SMS, in-app, and email notifications in multiple languages to serve diverse user populations.
+Third, we'll enable multi-channel delivery with support for SMS, in-app, and email notifications in multiple languages.
 
-Fourth, we'll facilitate financial actions by prompting users at optimal times—like the loan repayment example Hussein mentioned.
+Fourth, we'll facilitate financial actions by prompting users at optimal times, such as loan repayment reminders after harvest payments.
 
-Finally, we'll provide analytics and insights to measure the effectiveness of these communications and help Hiveonline refine their engagement strategies.
+Finally, we'll provide analytics to measure the effectiveness of these communications, helping Hiveonline refine their engagement strategies.
 
-I'll now pass to Simon, who will explain our proposed solution.
+I'll now pass to Simon, who will explain our proposed solution and key requirements.
 
-## Slide 5: Proposed Solution (60 seconds)
-**Speaker: Simon**
+## Simon (Slides 5-6) - 2 minutes
 
+### Slide 5: Proposed Solution and Planned Deliverables
 Thank you, Emma.
 
-Our solution is a hybrid orchestration system with five key components:
+Our solution is a layered architecture designed to integrate seamlessly with Hiveonline's existing systems. As you can see in this diagram, we have:
 
-We're implementing a hybrid architecture using FastAPI for real-time processing and Apache Airflow for scheduled workflows. This combination gives us the flexibility to handle both immediate events and planned communications.
+The Front-End Layer connects with the existing MyCoop and VSLA interfaces that users already interact with.
 
-Our event-driven system will process Kafka streams and user activity events to trigger appropriate communications based on predefined rules.
+The Orchestration Layer is our core component, combining FastAPI for real-time processing and Apache Airflow for scheduled workflows.
 
-We're implementing key rule-based triggers, including inactivity detection, new group member prompts, and financial opportunity reminders.
+The Integration Layer uses Kafka Consumers and REST Clients to connect with Hiveonline's existing services.
 
-The multi-channel notification service will manage all communications across SMS, email, and in-app messages through a unified interface.
+The Notification Layer handles multi-channel message delivery across different platforms.
 
-Finally, a monitoring dashboard will track engagement metrics and notification effectiveness, providing valuable insights to Hiveonline.
+And finally, we have the Storage Layer using PostgreSQL and the Monitoring Layer with Prometheus and Grafana for performance tracking.
 
-Now, David will cover our current progress.
+### Slide 6: Key Requirements
+For our implementation, we've identified five key requirements:
 
-## Slide 6: Current Progress (60 seconds)
-**Speaker: David**
+Our Development Framework combines FastAPI for API endpoints and real-time processing with Apache Airflow for workflow orchestration.
 
-Thanks, Simon.
+For the Messaging System, we're implementing real-time Kafka processing to handle event streams from multiple sources.
 
-We've made significant progress since beginning the project:
+The Business Logic component is a contextual communications engine that determines when and how to engage users.
 
-We've completed a comprehensive requirements analysis with the client to precisely define the scope and priorities.
+We'll support multiple Communication Channels including SMS, Email, and In-App Notifications to reach users through their preferred medium.
 
-We've finalized our technical architecture and component selection based on Hiveonline's existing infrastructure and needs.
+Finally, we're implementing comprehensive Monitoring Tools with a performance metrics dashboard to track system health and engagement effectiveness.
 
-We've set up our development environment using Docker containerization to ensure consistency across our team and eventual deployment.
+Now, Wallace will take you through our current progress and implementation approach.
 
-We've implemented the core FastAPI service with user authentication functionality and developed the database models for user activity tracking and notifications.
+## Wallace (Slides 7-8) - 2 minutes
 
-We've created a proof-of-concept for inactivity detection, which is one of our key trigger scenarios.
-
-And we've established our integration approach with Hiveonline's existing systems to ensure seamless connections.
-
-I'll now hand back to Wallace to explain our technical architecture.
-
-## Slide 7: Technical Architecture (60 seconds)
-**Speaker: Wallace**
-
-Thank you, David.
-
-Looking at our technical architecture, we have several interconnected components:
-
-At the front end, we're integrating with the existing MyCoop and VSLA user interfaces that Hiveonline already has in place.
-
-Our orchestration engine, using the FastAPI and Airflow hybrid solution, forms the core of our system.
-
-The integration layer consists of Kafka consumers and REST API clients to connect with Hiveonline's existing services and data streams.
-
-Our notification service handles multi-channel delivery across SMS, email, and in-app communications.
-
-For data storage, we're using PostgreSQL to track events and user states, which is compatible with Hiveonline's existing database infrastructure.
-
-Finally, we'll implement monitoring using Prometheus and Grafana dashboards to provide real-time visibility into the system's performance.
-
-Hussein will now explain our implementation approach.
-
-## Slide 8: Implementation Approach (60 seconds)
-**Speaker: Hussein**
-
-Thanks, Wallace.
-
-We're following a three-phase implementation approach:
-
-Phase 1, which we've completed, focused on core infrastructure setup. This included establishing our development environment, creating the necessary database models, and building the API foundations.
-
-We're currently in Phase 2, implementing the business logic. This includes developing the key trigger scenarios, notification templates, and user segmentation logic that will power the orchestration engine.
-
-Phase 3, which is upcoming, will focus on system integration. We'll connect our solution with Hiveonline's existing services, conduct thorough testing, and prepare for deployment.
-
-This phased approach allows us to deliver incremental value while managing complexity. It also provides clear checkpoints for client feedback.
-
-Emma will now discuss the challenges we've faced and our mitigation strategies.
-
-## Slide 9: Challenges & Mitigation Strategies (60 seconds)
-**Speaker: Emma**
-
-Thank you, Hussein.
-
-We've encountered several challenges in this project, but we've developed effective mitigation strategies for each:
-
-The first challenge is integration complexity due to the multiple systems and data formats we need to work with. We're addressing this by using mock services during development and taking a phased integration approach.
-
-Real-time performance is another challenge, especially given the potential volume of events. Our strategy is to implement a queue-based architecture with scaling capabilities to handle peak loads efficiently.
-
-Multi-language support presents challenges in ensuring accurate translations and cultural sensitivity. We're developing a template-based notification system with a localization framework to address this.
-
-Finally, timeline pressure due to our delayed start is a significant challenge. We're mitigating this by prioritizing core features using the MoSCoW method with direct client input to ensure we deliver the most valuable functionality first.
-
-Simon will now walk us through our timeline and next steps.
-
-## Slide 10: Timeline & Next Steps (60 seconds)
-**Speaker: Simon**
-
-Thanks, Emma.
-
-Looking at our timeline for the remainder of the project:
-
-From March 11-25, we'll implement our three core trigger scenarios: user inactivity detection, new group member addition prompts, and loan repayment reminders. These represent the highest-value use cases for Hiveonline.
-
-From March 26 to April 10, we'll focus on integration with Hiveonline's systems. This includes connecting to the MyCoop and VSLA APIs and conducting thorough testing in the staging environment.
-
-Finally, from April 11-22, we'll handle deployment and documentation. This includes deploying to production, creating user guides and technical documentation, and preparing our final presentation.
-
-We're on track with this timeline and confident in our ability to deliver a high-quality solution that meets Hiveonline's needs.
-
-David will now cover our references.
-
-## Slide 11: References (20 seconds)
-**Speaker: David**
-
+### Slide 7: Current Progress
 Thank you, Simon.
 
-For this project, we've consulted several key resources, including Hiveonline's platform documentation, as well as documentation for Apache Airflow, FastAPI, and Kafka Streams.
+This diagram illustrates our current implementation progress. We've established the foundational architecture for how the orchestration system will integrate with Hiveonline's existing platform. 
 
-These resources have been valuable in guiding our technical decisions and ensuring alignment with best practices.
+On the top left, you can see the user-facing apps—MyCoop and VSLA—which connect to various hiveonline platform services, including Identity, Finance, Crop Plans, Notification, and Marketplace.
 
-I'll now hand back to Wallace to wrap up our presentation.
+Our orchestration system, highlighted in blue, connects to these services via HTTP and Kafka streams. Within our system, we've implemented:
+- The FastAPI component for handling real-time events
+- The rule-based engine using Apache Airflow with DAGs, scheduling, and execution components
+- A task engine with workers to process notifications
+- A PostgreSQL database for data persistence
+- And performance monitoring using Grafana and Prometheus
 
-## Slide 12: Q&A (20 seconds)
-**Speaker: Wallace**
+We're currently in the process of connecting these components to create a seamless workflow.
 
-Thank you, David, and thanks to all our team members for their contributions.
+### Slide 8: Challenges and Mitigation
+We've encountered several challenges during our implementation, but we've developed effective mitigation strategies for each:
 
-This concludes our midterm presentation. We'd like to thank Qusai and Professor Ostheimer for their time and guidance throughout this project.
+The first challenge is Integration Complexity, due to the multiple systems and data formats we need to work with. We're addressing this using mock services for development and taking a phased integration approach.
 
-We're now open to any questions you might have about our progress or plans.
+For Real-Time Performance concerns, especially with the potential volume of events, we're implementing a queue-based architecture to handle peak loads efficiently.
+
+Multi-Language Support presents challenges in ensuring accurate translations. We're developing a template-based localization framework to address this.
+
+Finally, we're dealing with Timeline Pressure due to our delayed start by using MoSCoW prioritization to ensure we deliver the most valuable functionality first.
+
+I'll now hand over to David, who will walk us through our timeline, next steps, and references.
+
+## David (Slides 9-11) - 2 minutes
+
+### Slide 9: Current and Next Steps
+Thank you, Wallace.
+
+Looking at our project timeline, we've completed several key milestones, including requirements analysis, technical architecture design, development environment setup, and implementing the core FastAPI service.
+
+We're currently in the first implementation phase, running from March 11-25, where we're developing the three core trigger scenarios: inactivity detection, group prompts, and loan repayment reminders.
+
+Our next phase, from March 26 to April 10, will focus on API connections and testing in the staging environment.
+
+The final phase, from April 11-22, will include production release and technical documentation. We're on track with this timeline and confident in our ability to deliver a high-quality solution that meets Hiveonline's needs.
+
+### Slide 10: References
+For this project, we've consulted several key resources, including Hiveonline's platform documentation and documentation for Apache Airflow, FastAPI, and Kafka Streams. These resources have been valuable in guiding our technical decisions and ensuring alignment with best practices.
+
+### Slide 11: Q&A
+This concludes our midterm presentation. We'd like to thank Qusai and Professor Ostheimer for their time and guidance throughout this project. We're now open to any questions you might have about our progress or plans.
