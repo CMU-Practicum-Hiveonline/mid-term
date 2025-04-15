@@ -51,6 +51,8 @@ Team: Wallace Msagusa, Simon Pierre Ndizihiwe, Hussein Murashi, David Ndenzako, 
 3. **Production Plan Overdue**: Alert when plans have no deliveries
 4. **Coop Order Status**: Flag orders without updates for 7+ days
 5. **Group Meeting Inactivity**: Notify for groups without meetings for 30+ days
+.
+7.............
 
 **Multi-Language Support:**
 - Templates in English, Swahili, and Portuguese
