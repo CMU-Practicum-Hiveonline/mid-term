@@ -90,7 +90,7 @@ Second, integrating deeper user analytics that would help to track notification 
 
 Third, adding machine learning to predict optimal notification timing and content.
 
-Fourth, extending to additional communication channels like WhatsApp and Telegram would reach users through their preferred platforms.
+Fourth, extending to additional communication channels like WhatsApp and Telegram to reach users through their preferred platforms.
 
 Finally, a self-service portal would allow Hiveonline administrators to create custom triggers without requiring technical support.
 
