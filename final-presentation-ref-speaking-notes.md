@@ -84,11 +84,11 @@ Thank you, David.
 
 While we've delivered a robust orchestration system, there are several areas for future enhancement:
 
-First, we could develop more sophisticated trigger conditions using advanced business rules, allowing for more personalized communications based on user behavior patterns.
+First, developing more sophisticated trigger conditions using advanced business rules. To allow more personalized communications based on user behavior patterns.
 
-Second, integrating deeper user analytics would help track notification effectiveness and refine engagement strategies over time.
+Second, integrating deeper user analytics that would help to track notification effectiveness and refine engagement strategies over time.
 
-Third, machine learning could be added to predict optimal notification timing and content, further personalizing the experience.
+Third, adding machine learning to predict optimal notification timing and content.
 
 Fourth, extending to additional communication channels like WhatsApp and Telegram would reach users through their preferred platforms.
 
