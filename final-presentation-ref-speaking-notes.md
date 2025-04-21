@@ -92,7 +92,7 @@ Third, adding machine learning to predict optimal notification timing and conten
 
 Fourth, extending to additional communication channels like WhatsApp and Telegram to reach users through their preferred platforms.
 
-Finally, a self-service portal would allow Hiveonline administrators to create custom triggers without requiring technical support.
+Finally, a self-service portal to allow Hiveonline administrators to create custom triggers without requiring technical support.
 
 This concludes our presentation. We'd like to thank Qusai and Professor Ostheimer for their guidance throughout this project. We're now open to any questions you might have.
 
